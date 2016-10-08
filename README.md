@@ -1,9 +1,8 @@
 #Introduction-to-Algorithms implementation in C++
- =====================
-Visual Studio 2013 projects
+=====================Visual Studio 2013 projects
 
 contents
-————————
+- - - -
 >>binary search
 >>bubble sort
 >>insertion sort
