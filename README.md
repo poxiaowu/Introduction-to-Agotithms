@@ -10,4 +10,4 @@ contents
    **maximum subarray
    **merge sort
    **matrix multiply
-   **matrix multiply(a simple divide-and-conquer algorithms)
+    **matrix multiply(a simple divide-and-conquer algorithms)
