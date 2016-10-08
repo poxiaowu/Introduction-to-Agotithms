@@ -3,7 +3,7 @@
 ===============Visual Studio 2013 projects
 
 contents
-	**binary search
+        **binary search
 	**bubble sort
 	**insertion sort
 	**maximum subarray
