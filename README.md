@@ -3,10 +3,10 @@
 
 contents
 - - - -
->>binary search
->>bubble sort
->>insertion sort
->>maximum subarray
->>merge sort
->>matrix multiply
->>matrix multiply(a simple divide-and-conquer algorithms)
+>>binary search<br>
+>>bubble sort<br>
+>>insertion sort<br>
+>>maximum subarray<br>
+>>merge sort<br>
+>>matrix multiply<br>
+>>matrix multiply(a simple divide-and-conquer algorithms)<br>
