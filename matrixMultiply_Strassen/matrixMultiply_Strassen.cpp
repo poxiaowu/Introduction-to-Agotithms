@@ -15,10 +15,10 @@ using std::cerr;
 using std::uniform_int_distribution;
 using std::default_random_engine;
 
-/***************************************************************    
-			采用Strassen算法作递归运算，需要创建大量的动态二
-			维数组，其中分配堆内存空间将占用大量计算时间，从
-			而掩盖了Strassen算法的优势
+/***************************************************************
+        采用Strassen算法作递归运算，需要创建大量的动态二
+        维数组，其中分配堆内存空间将占用大量计算时间，从
+        而掩盖了Strassen算法的优势
 ****************************************************************/
 
 // n*n matrix multiply(n is power of 2)
@@ -41,7 +41,7 @@ struct Matrix
 			ivec.push_back(v);
 			v.clear();
 		}
-		
+
 	}
 
 	int row = 0;
