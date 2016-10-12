@@ -9,4 +9,5 @@
 >maximum subarray<br>
 >merge sort<br>
 >matrix multiply<br>
->matrix multiply(a simple divide-and-conquer algorithms)<br>
+>matrix multiply(divide-and-conquer)<br>
+>matrix multiply(Strassen)<br>
