@@ -11,3 +11,4 @@
 >matrix multiply<br>
 >matrix multiply(divide-and-conquer)<br>
 >matrix multiply(Strassen)<br>
+>counting sort<br>
