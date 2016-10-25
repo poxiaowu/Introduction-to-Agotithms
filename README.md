@@ -13,3 +13,4 @@
 >matrix multiply(Strassen)<br>
 >counting sort<br>
 >radix sort<br>
+>heapsort<br>
