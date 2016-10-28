@@ -14,3 +14,4 @@
 >counting sort<br>
 >radix sort<br>
 >heapsort<br>
+>quicksort<br>
