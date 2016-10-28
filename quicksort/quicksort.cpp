@@ -34,7 +34,7 @@ void quicksort(vector<int> &v, const int &p, const int &r)
 	{
 		int q = partion(v, p, r);
 		quicksort(v, p, q - 1);
-		quicksort(v, q, r);
+		quicksort(v, q + 1, r);
 	}
 }
 
