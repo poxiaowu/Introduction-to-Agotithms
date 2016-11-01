@@ -15,3 +15,4 @@
 >radix sort<br>
 >heapsort<br>
 >quicksort<br>
+>bucket sort<br>

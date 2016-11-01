@@ -13,14 +13,14 @@ void InsertionSort(vector<int> &ivec)
 		key = *it;
 		auto bef = it - 1;
 
-		while (bef != ivec.begin() & *bef > key)//没有比较第0位元素，在后面用if判断
+		while (bef != ivec.begin() && *bef > key)//没有比较第0位元素，在后面用if判断
 		{
 			*(bef + 1) = *bef;
 			--bef;
 		}
 		*(bef + 1) = key;
 
-		if (bef == ivec.begin() & *bef > key)
+		if (bef == ivec.begin() && *bef > key)
 		{
 			*(bef + 1) = *bef;
 			*bef = key;
