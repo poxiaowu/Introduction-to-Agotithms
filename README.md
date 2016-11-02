@@ -17,3 +17,4 @@
 >quicksort<br>
 >bucket sort<br>
 >randomized quicksort<br>
+>minimum and maximum<br>
