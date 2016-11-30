@@ -19,3 +19,5 @@
 >randomized quicksort<br>
 >minimum and maximum<br>
 >randomized select<br>
+>stacks<br>
+>queues<br>
