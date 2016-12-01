@@ -21,3 +21,5 @@
 >randomized select<br>
 >stacks<br>
 >queues<br>
+>lists<br>
+>lists_Sentinels<br>
