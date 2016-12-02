@@ -5,11 +5,13 @@ using std::endl;
 
 class node;
 class List;
+class Hash;
 
 class node
 {
 public:
 	friend class List;
+	friend void print(node *N);
 
 	node() = default;
 	node(const int &val) :prev(nullptr), next(nullptr), key(val){}
@@ -33,11 +35,6 @@ public:
 	node* List_search(const int &val);
 	void List_insertion(const int &val);
 	void List_delete(const int &val);
-
-	void print(node *N)
-	{
-		cout << N->key << endl;
-	}
 
 private:
 	node *nil;
@@ -70,19 +67,53 @@ void List::List_delete(const int &val)
 	delete N;
 }
 
+void print(node *N)
+{
+	cout << N->key << endl;
+}
+
+class Hash
+{
+public:
+	Hash()
+	{
+		arry = new List[100];
+	}
+
+	node* chained_hash_search(const int &val);
+	void chained_hash_insert(const int &val);
+	void chained_hash_delete(const int &val);
+
+private:
+	List *arry;
+};
+
+node* Hash::chained_hash_search(const int &val)
+{
+	return (arry + val % 100)->List_search(val);
+}
+
+void Hash::chained_hash_insert(const int &val)
+{
+	(arry + val % 100)->List_insertion(val);
+}
+
+void Hash::chained_hash_delete(const int &val)
+{
+	(arry + val % 100)->List_delete(val);
+}
+
 
 int main()
 {
-	List L;
+	Hash H;
+	H.chained_hash_insert(1);
+	H.chained_hash_insert(55);
+	H.chained_hash_insert(6);
 
-	L.List_insertion(5);
-	L.List_insertion(6);
+	auto p = H.chained_hash_search(55);
 
-	auto p = L.List_search(5);
-
-	L.print(p);
-
-	L.List_delete(6);
+	print(p);
 
 	system("pause");
 	return 0;

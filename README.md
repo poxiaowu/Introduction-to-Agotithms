@@ -23,3 +23,4 @@
 >queues<br>
 >lists<br>
 >lists_Sentinels<br>
+>hash_tables<br>
