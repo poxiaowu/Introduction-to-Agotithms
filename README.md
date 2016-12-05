@@ -24,3 +24,4 @@
 >lists<br>
 >lists_Sentinels<br>
 >hash_tables<br>
+>binary search trees<br>
