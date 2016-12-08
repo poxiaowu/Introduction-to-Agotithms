@@ -142,6 +142,7 @@ void BSTS::tree_delete(BSTS &T, Node *n)
 		tmp->left = n->left;
 		tmp->left->parent = tmp;
 	}
+	delete n;//free dynamic memory.
 }
 
 Node* BSTS::find_root()

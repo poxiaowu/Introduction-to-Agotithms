@@ -67,7 +67,7 @@ void List::List_delete(const int &val)
 
 	N->prev->next = N->next;
 	N->next->prev = N->prev;
-	delete N;
+	delete N;//free dynamic memory.
 }
 
 
