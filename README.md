@@ -25,3 +25,4 @@
 >lists_Sentinels<br>
 >hash_tables<br>
 >binary search trees<br>
+>red_black trees<br>
