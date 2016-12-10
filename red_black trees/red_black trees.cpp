@@ -157,7 +157,7 @@ void RB_trees::RB_delete(RB_trees &T, Node *n)
 		n2 = tree_minimum(n->right);
 		n2_orig_color = n2->color;
 
-		if (n2->parent == n)
+		if (n2->parent == n && tmp != nullptr)
 		{
 			tmp->parent = n2;
 		}
@@ -165,18 +165,22 @@ void RB_trees::RB_delete(RB_trees &T, Node *n)
 		{
 			RB_transplant(T, n2, n2->right);
 			n2->right = n->right;
-			n2->right->parent = n2;
+
+			if (n2->right != nullptr)
+				n2->right->parent = n2;
 		}
 
 		RB_transplant(T, n, n2);
 		n2->left = n->left;
-		n2->left->parent = n2;
+
+		if (n2->left != nullptr)
+			n2->left->parent = n2;
 		n2->color = n->color;
 	}
 	if (n2_orig_color == black)
 		RB_delete_fixup(tmp);
 
-	delete n;//free dynamic memory.g
+	delete n;//free dynamic memory.
 }
 
 Node* RB_trees::find_root()
@@ -210,25 +214,25 @@ void RB_trees::left_rotate(Node *n)
 
 void RB_trees::right_rotate(Node *n)
 {
-	if (n->right != nullptr)
+	if (n->left != nullptr)
 	{
-		Node *r_node = n->left;
-		n->left = r_node->right;
+		Node *l_node = n->left;
+		n->left = l_node->right;
 
-		if (r_node->right != nullptr)
-			r_node->right->parent = n;
+		if (l_node->right != nullptr)
+			l_node->right->parent = n;
 
-		r_node->parent = n->parent;
+		l_node->parent = n->parent;
 
 		if (n->parent == nullptr)
-			root = r_node;
-		else if (n == n->parent->left)
-			n->parent->left = r_node;
+			root = l_node;
+		else if (n == n->parent->right)
+			n->parent->right = l_node;
 		else
-			n->parent->right = r_node;
+			n->parent->left = l_node;
 
-		r_node->left = n;
-		n->parent = r_node;
+		l_node->right = n;
+		n->parent = l_node;
 	}
 }
 
@@ -320,7 +324,7 @@ void RB_trees::RB_delete_fixup(Node *n)
 					r_node->color = red;//case 2
 					n = n->parent;//case 2
 				}
-				else 
+				else
 				{
 					if (r_node->right != nullptr && r_node->left != nullptr && r_node->right->color == black)
 					{
@@ -329,7 +333,7 @@ void RB_trees::RB_delete_fixup(Node *n)
 						right_rotate(r_node);//case 3
 						r_node = n->parent->right;//case 3
 					}
-			
+
 					r_node->color = n->parent->color;//case 4
 					n->parent->color = black;//case 4
 					r_node->right->color = black;//case 4
@@ -343,34 +347,34 @@ void RB_trees::RB_delete_fixup(Node *n)
 		{
 			if (n->parent != nullptr && n == n->parent->right)
 			{
-				Node *r_node = n->parent->left;
-				if (r_node != nullptr)
+				Node *l_node = n->parent->left;
+				if (l_node != nullptr)
 				{
-					if (r_node->color == red)
+					if (l_node->color == red)
 					{
-						r_node->color = black;//case 1
+						l_node->color = black;//case 1
 						n->parent->color = red;//case 1
-						left_rotate(n->parent);//case 1
-						r_node = n->parent->left;//case 1
+						right_rotate(n->parent);//case 1
+						l_node = n->parent->left;//case 1
 					}
-					if (r_node->left != nullptr && r_node->right != nullptr && r_node->right->color == black && r_node->left->color == black)
+					if (l_node->left != nullptr && l_node->right != nullptr && l_node->right->color == black && l_node->left->color == black)
 					{
-						r_node->color = red;//case 2
+						l_node->color = red;//case 2
 						n = n->parent;//case 2
 					}
 					else
 					{
-						if (r_node->right != nullptr && r_node->left != nullptr && r_node->left->color == black)
+						if (l_node->right != nullptr && l_node->left != nullptr && l_node->left->color == black)
 						{
-							r_node->right->color = black;//case 3
-							r_node->color = red;//case 3
-							left_rotate(r_node);//case 3
-							r_node = n->parent->left;//case 3
+							l_node->right->color = black;//case 3
+							l_node->color = red;//case 3
+							left_rotate(l_node);//case 3
+							l_node = n->parent->left;//case 3
 						}
 
-						r_node->color = n->parent->color;//case 4
+						l_node->color = n->parent->color;//case 4
 						n->parent->color = black;//case 4
-						r_node->left->color = black;//case 4
+						l_node->left->color = black;//case 4
 						right_rotate(n->parent);//case 4
 						n = root;//case 4
 					}
@@ -381,14 +385,15 @@ void RB_trees::RB_delete_fixup(Node *n)
 	n->color = black;
 }
 
+
 int main()
 {
-	vector<int> ivec{ 3, 4, 1, 2, 6, 10, 7};
+	vector<int> ivec{ 3, 4, 1, 2, 6, 10, 7, 9};
 	RB_trees T(ivec);
 
 	Node *r = T.find_root();
 
-	auto found = T.tree_search(r, 2);
+	auto found = T.tree_search(r, 9);
 
 	if (found != nullptr)
 		T.RB_delete(T, found);
