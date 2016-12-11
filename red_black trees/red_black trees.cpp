@@ -156,6 +156,7 @@ void RB_trees::RB_delete(RB_trees &T, Node *n)
 	{
 		n2 = tree_minimum(n->right);
 		n2_orig_color = n2->color;
+		tmp = n2->right;
 
 		if (n2->parent == n && tmp != nullptr)
 		{
