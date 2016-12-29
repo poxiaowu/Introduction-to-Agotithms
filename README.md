@@ -27,4 +27,5 @@
 >binary search trees<br>
 >red_black trees<br>
 >OS trees<br>
->interval trees
+>interval trees<br>
+>skip list<br>
