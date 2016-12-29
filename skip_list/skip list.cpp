@@ -69,11 +69,15 @@ Skip_list::Skip_list(vector<int> &v)
 		Skip_list_insertion(elm);
 }
 
-bool flip_a_coin()
+bool flip_a_coin(const int &num)
 {
 	default_random_engine e((unsigned)time(0));
+	bool flip_result;
 
-	return e() >= (e.max() / 2);
+	for (int i = 0; i != num + 1; ++i)
+		flip_result = (e() >= (e.max() / 2));
+
+	return flip_result;
 }
 
 node* Skip_list::Skip_list_search(const int &line, const int &val)
@@ -133,7 +137,7 @@ void Skip_list::Skip_list_insertion(const int &val)
 	{
 		insert_node1 = insert_list(insert, val);//insert a node in the bottom line
 
-		while (flip_a_coin())//promoted
+		while (flip_a_coin(skip_line))//promoted
 		{
 			--skip_num;
 			node * insert_node2 = nullptr;//promote a node 
@@ -211,7 +215,7 @@ void Skip_list::Skip_list_deletion(const int &val)
 
 int main()
 {
-	vector<int> v{ 8, 3, 10, 5, 7, 13, 2, 9, 10 };
+	vector<int> v{ 6, 3, 10, 5, 7, 13, 2, 9, 10, 14, 17, 1, 15 };
 	Skip_list L(v);
 
 	L.Skip_list_deletion(7);
