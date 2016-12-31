@@ -30,3 +30,6 @@
 >interval trees<br>
 >skip list<br>
 >rod_cut_recursive_top_down<br>
+>memoized_top_down_cut_rod<br>
+>memoized_bottom_up_cut_rod<br>
+>extended_bottom_up_cut_rod<br>
