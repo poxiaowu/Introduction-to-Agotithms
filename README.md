@@ -33,3 +33,4 @@
 >memoized_top_down_cut_rod<br>
 >memoized_bottom_up_cut_rod<br>
 >extended_bottom_up_cut_rod<br>
+>matrix_chain_multiplication(bottom-up)<br>
