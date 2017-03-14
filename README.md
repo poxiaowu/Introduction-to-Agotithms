@@ -35,3 +35,4 @@
 >extended_bottom_up_cut_rod<br>
 >matrix_chain_multiplication(bottom-up)<br>
 >greedy-activity-selector<br>
+>Huffman<br>
