@@ -36,3 +36,4 @@
 >matrix_chain_multiplication(bottom-up)<br>
 >greedy-activity-selector<br>
 >Huffman<br>
+>B_tree<br>
