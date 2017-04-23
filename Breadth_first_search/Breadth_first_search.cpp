@@ -96,6 +96,7 @@ void Graph::Breadth_first_search(Graph &G, const int &s)
 
 int main()
 {
+	//undirected graph
 	vector<vector<int>> matrix{ { 0, 1, 0, 0, 1, 0, 0, 0 },
 								{ 1, 0, 0, 0, 0, 1, 0, 0 },
 								{ 0, 0, 0, 1, 0, 1, 1, 0 },
