@@ -39,3 +39,4 @@
 >B_tree<br>
 >Breadth_first_search<br>
 >Depth_first_search<br>
+>Dijkstra's algorithm<br>
