@@ -23,7 +23,6 @@ void Conditional_search(Graph &G, const int &st, const int &ed, vector<int> &pas
 	                    map<int, int> &pass_edge, map<int, int> &not_pass_edge);
 int extract_min(vector<Vertex *> &v);
 void path_print(Vertex *uNode, const int &s);
-int detect_min(vector<Vertex *> &v);
 
 class Vertex
 {
@@ -36,7 +35,6 @@ public:
 	friend void path_print(Vertex *uNode, const int &s);
 	friend void Conditional_search(Graph &G, const int &st, const int &ed, vector<int> &pass_vert,
 		                           map<int, int> &pass_edge, map<int, int> &not_pass_edge);
-	friend int detect_min(vector<Vertex *> &v);
 	
 	Vertex() :distance(INT_MAX), pi(nullptr),color("white"){}
 	
@@ -56,7 +54,6 @@ public:
 	friend void Dijkstra(Graph &G, const int &s);
 	friend void Conditional_search(Graph &G, const int &st, const int &ed, vector<int> &pass_vert, 
 		                           map<int, int> &pass_edge, map<int, int> &not_pass_edge);
-	friend int detect_min(vector<Vertex *> &v);
 
 	Graph() = default;
 	Graph(vector<vector<int>> &matrix) :edge(matrix)
@@ -163,12 +160,6 @@ void Dijkstra(Graph &G, const int &s)
 		}
 	}
 }
-
-/*int detect_min(vector<Vertex *> &v)
-{
-	int min = 0;
-
-}*/
 
 void Conditional_search(Graph &G, const int &st, const int &ed, vector<int> &pass_vert,
 	                    map<int, int> &pass_edge, map<int, int> &not_pass_edge)
