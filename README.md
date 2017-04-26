@@ -42,3 +42,4 @@
 >Dijkstra's algorithm<br>
 >improved Dijkstra's algorithm<br>
 >toplogical_sort<br>
+>strongly_connected_components<br>
