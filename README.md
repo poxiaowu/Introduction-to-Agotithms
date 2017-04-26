@@ -41,3 +41,4 @@
 >Depth_first_search<br>
 >Dijkstra's algorithm<br>
 >improved Dijkstra's algorithm<br>
+>toplogical_sort<br>
