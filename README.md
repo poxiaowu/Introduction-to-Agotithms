@@ -50,3 +50,4 @@
 >SLow_all_pairs_shortest_paths<br>
 >ZTE_Dijkstra<br>
 >Faster_all_pairs_shortest_paths<br>
+>Floyd_Warshall_algorithm<br>
