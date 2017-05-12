@@ -47,3 +47,4 @@
 >Dag_shortest_path<br>
 >MST_Kruskal<br>
 >MST_Prim<br>
+>SLow_all_pairs_shortest_paths<br>
