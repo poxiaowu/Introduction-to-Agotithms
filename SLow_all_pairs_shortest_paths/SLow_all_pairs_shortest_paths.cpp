@@ -46,14 +46,7 @@ vector<vector<int>> Slow_all_pairs_shortest_paths(vector<vector<int>> &W)
 
 	for (int m = 1; m != (row - 1); ++m)
 	{
-		vector<vector<int>> L_m;
-		for (int i = 0; i != row; ++i)//initialization for L_m.
-		{
-			vector<int> v(row);
-			L_m.push_back(v);
-		}
-
-		L_m = Extend_shortest_paths(L_vec[m - 1], W);
+		vector<vector<int>> L_m = Extend_shortest_paths(L_vec[m - 1], W);
 		L_vec.push_back(L_m);
 
 	}
